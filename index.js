@@ -48,7 +48,7 @@ bot.command('analyze', async (ctx, next) => {
 
       const result = await fetch('http://chinsfakebox.eastus.azurecontainer.io:8080/fakebox/check', {method: 'post', body: JSON.stringify({content: articleContent}), headers: { 'Content-Type': 'application/json' }})
       const resultJson = await result.json()
-      ctx.reply(`Content score: ${resultJson['content']['score']} (${resultJson['content']['decision']})\n(Analysis by Veracity)`)
+      ctx.reply(`Content score: ${resultJson['content']['score'].toFixed(5)} (${resultJson['content']['decision']})\n(Analysis by Veracity)`)
 
   }
   
