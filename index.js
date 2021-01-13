@@ -40,7 +40,7 @@ bot.command('analyze', async (ctx, next) => {
   const offsetLength = ctx.message.entities[0].length
   const articleContent = ctx.message.text.substring(offsetLength, ctx.message.text.length);
   console.log(ctx.message)
-  if (!message.length){
+  if (!articleContent.length){
       //return menuMiddleware.replyToContext(ctx)
       next(ctx)
   }
